@@ -1,0 +1,12 @@
+name: action
+
+on: [push]
+ 
+jobs: 
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout
+        uses: actions/checkout@v2
+  
+    
