@@ -8,5 +8,8 @@ jobs:
     steps: 
       - name: checkout
         uses: actions/checkout@v2
+      - name: set up python
+        uses: actions/setup-python@v2
+      - run: python code.py
   
     
