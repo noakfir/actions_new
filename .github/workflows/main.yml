@@ -8,10 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
        - uses: actions/checkout@v2
-       - run: git config user.email "noa.kfir@aquant.io" && git config user.name "noakfir" && git add -A && git commit -m "Updated code
        - uses: akhileshns/heroku-deploy@v3.12.12
          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+            heroku_api_key: "89cb32b3-37e8-4ef3-932b-11b685a138d9"
             heroku_app_name: "github-actions-testing-noa" 
             heroku_email: "noa.kfir@aquant.io"
        - name: set up python
