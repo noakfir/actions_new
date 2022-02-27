@@ -14,7 +14,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "github-actions-test-noa" 
           heroku_email: "noa.kfir@aquant.io"
-          buildpack: heroku/python
+          buildpack: $ heroku buildpacks:set heroku/python
       - name: set up python
         uses: actions/setup-python@v2
       - name: Install dependencies
