@@ -11,7 +11,7 @@ jobs:
        - uses: akhileshns/heroku-deploy@v3.12.12
          with:
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "github-actions-test-noa" 
+            heroku_app_name: "github-actions-testing-noa" 
             heroku_email: "noa.kfir@aquant.io"
        - name: set up python
          uses: actions/setup-python@v2
