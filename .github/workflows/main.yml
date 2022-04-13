@@ -8,7 +8,7 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - run: mkdir -p path/to/artifact
 
@@ -17,11 +17,12 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
+        path: path/to/artifact/world.txt
         
   download:
      runs-on: ubuntu-latest
      steps:
-     - uses: actions/checkout@v2
+     - uses: actions/checkout@v3
        with:
          repository: 'noa_kfir/d'
 
