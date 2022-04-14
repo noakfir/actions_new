@@ -24,9 +24,9 @@ jobs:
      steps:
      - uses: actions/checkout@v3
        with:
-         repository: 'noakfir/d'
+         repository: 'noakfir/GitActions'
          token: ${{ secrets.PERSONAL_TOKEN }}
-         path: 'd'
+         path: 'GitActions'
 
      - uses: actions/download-artifact@v2
        with:
