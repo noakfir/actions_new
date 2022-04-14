@@ -24,7 +24,7 @@ jobs:
      steps:
      - uses: actions/checkout@v3
        with:
-         repository: 'noa_kfir/d'
+         repository: 'noakfir/d'
          token: ${{ secrets.PERSONAL_TOKEN }}
          path: 'd'
 
