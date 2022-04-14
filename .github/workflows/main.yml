@@ -26,6 +26,7 @@ jobs:
        with:
          repository: 'noa_kfir/d'
          token: ${{ secrets.PERSONAL_TOKEN }}
+         path: 'd'
 
      - uses: actions/download-artifact@v2
        with:
