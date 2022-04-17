@@ -26,6 +26,8 @@ jobs:
       run: |
         git config --local user.email "noa.kfir@aquant.io"
         git config --local user.name "noakfir"
+        git remote set-url origin https://github.com/noakfir/GitActions.git
+        git checkout "GitActions"
         git add .
         git commit -m "Add changes" -a
         git push
