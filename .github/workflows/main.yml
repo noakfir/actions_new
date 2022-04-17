@@ -3,17 +3,17 @@ name: CI
 on:
 
   workflow_dispatch:
-
+  
 jobs:
-  upload:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
-         repository: 'noakfir/GitActions'
-         token: ${{ secrets.PERSONAL_TOKEN }}
-         path: 'GitActions'
-
+        repository: 'noakfir/GitActions'
+        token: ${{ secrets.PERSONAL_TOKEN}}
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - run: mkdir -p path/to/artifact
 
     - run: echo hello > path/to/artifact/world.txt
@@ -22,13 +22,15 @@ jobs:
       with:
         name: my-artifact
         path: path/to/artifact/world.txt
-        
-    - name: update file and push to remote
+    - name: Commit files
       run: |
-
-        git config --global user.name "https://github.com/noakfir/GitActions.git"
-        git config --global user.email "noa.kfir@aquant.io"
-
-        git add -A
-        git commit -m "first try"
-        git push
+        git config --local user.email "noa.kfir@aquant.io"
+        git config --local user.name "noakfir"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN}}
+        branch: "main"
+        repository: "noakfir/GitActions"
+      
