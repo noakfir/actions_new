@@ -12,8 +12,8 @@ jobs:
       with:
         repository: 'noakfir/GitActions'
         token: ${{ secrets.PERSONAL_TOKEN}}
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+        persist-credentials: false 
+        fetch-depth: 0 
     - run: mkdir -p path/to/artifact
 
     - run: echo hello > path/to/artifact/world.txt
