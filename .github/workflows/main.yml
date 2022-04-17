@@ -26,7 +26,7 @@ jobs:
     - name: update file and push to remote
       run: |
 
-        git config --global user.name "noakfir"
+        git config --global user.name "https://github.com/noakfir/actions_new.git"
         git config --global user.email "noa.kfir@aquant.io"
 
         git add -A
