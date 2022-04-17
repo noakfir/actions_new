@@ -27,7 +27,7 @@ jobs:
         git config --local user.email "noa.kfir@aquant.io"
         git config --local user.name "noakfir"
         git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/noakfir/GitActions
-        git checkout "GitActions"
+        git checkout "noakfir/GitActions"
         git add .
         git commit -m "Add changes" -a
         git push
