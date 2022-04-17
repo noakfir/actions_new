@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+         repository: 'noakfir/GitActions'
+         token: ${{ secrets.PERSONAL_TOKEN }}
+         path: 'GitActions'
 
     - run: mkdir -p path/to/artifact
 
@@ -19,26 +23,12 @@ jobs:
         name: my-artifact
         path: path/to/artifact/world.txt
         
-  download:
-     runs-on: ubuntu-latest
-     steps:
-     - uses: actions/checkout@v3
-       with:
-         repository: 'noakfir/GitActions'
-         token: ${{ secrets.PERSONAL_TOKEN }}
-         path: 'GitActions'
+    - name: update file and push to remote
+      run: |
 
-     - uses: actions/download-artifact@v2
-       with:
-         name: my-artifact
-         path: path/to/artifact/world.txt
-   
-     - name: update file and push to remote
-       run: |
+        git config --global user.name "noakfir"
+        git config --global user.email "noa.kfir@aquant.io"
 
-         git config --global user.name "noakfir"
-         git config --global user.email "noa.kfir@aquant.io"
-
-         git add -A
-         git commit -m "first try"
-         git push
+        git add -A
+        git commit -m "first try"
+        git push
