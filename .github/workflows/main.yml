@@ -34,11 +34,11 @@ jobs:
          path: path/to/artifact/world.txt
    
      - name: update file and push to remote
-        run:|
+       run: |
 
-          git config --global user.name "noakfir"
-          git config --global user.email "noa.kfir@aquant.io"
+         git config --global user.name "noakfir"
+         git config --global user.email "noa.kfir@aquant.io"
 
-          git add -A
-          git commit -m "first try"
-          git push
+         git add -A
+         git commit -m "first try"
+         git push
